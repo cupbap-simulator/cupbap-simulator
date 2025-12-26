@@ -2,25 +2,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
   background-image: url("background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
 
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* ✅ 기본(PC/노트북) */
+/* ✅ 기본(PC/노트북): 살짝 더 작게 + 아래로 */
 .game-container {
-  width: min(420px, 90vw);
+  width: min(390px, 88vw);      /* ⭐ 조금 줄임 */
   background: #ffffffcc;
   border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   padding: 20px;
 
-  margin-left: 700px; /* PC에서는 오른쪽으로 */
+  margin-left: 700px;           /* PC에서 오른쪽 */
+  transform: translateY(20px);  /* ⭐ 아래로 살짝 */
 }
 
 .character-area {
@@ -56,13 +59,14 @@ body {
 }
 
 .choice-btn {
-  padding: 8px;
+  padding: 10px;
   border-radius: 12px;
   border: none;
   cursor: pointer;
   background: #ffe4f2;
   text-align: left;
   transition: 0.1s;
+  font-size: 14px;
 }
 
 .choice-btn:hover {
@@ -73,14 +77,16 @@ body {
 .next-btn {
   margin-top: 10px;
   width: 100%;
-  padding: 8px 0;
+  padding: 10px 0;
   border-radius: 12px;
   border: none;
   background: #ff9acb;
   color: white;
   cursor: pointer;
+  font-size: 14px;
 }
 
+/* 결과창 */
 .result-section {
   position: absolute;
   top: 50%;
@@ -89,17 +95,30 @@ body {
   background: #ffffffee;
   padding: 24px;
   border-radius: 20px;
-  width: 320px;
+  width: min(360px, 90vw);
   text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-/* ✅ 📱 모바일(폰)에서는 크게 + 가운데 정렬 + 글씨/버튼 키우기 */
+.restart-btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 12px;
+  border: none;
+  background: #ff9acb;
+  color: white;
+  cursor: pointer;
+}
+
+/* ✅ 📱 모바일에서는 크게 + 가운데 (오른쪽 밀기 해제) */
 @media (max-width: 768px) {
   .game-container {
     width: 92vw;
     max-width: 520px;
-    margin-left: 0;         /* ⭐ 오른쪽 밀기 해제 */
+    margin-left: 0;            /* ⭐ 모바일에서 오른쪽 밀기 해제 */
     padding: 24px;
+    transform: translateY(20px); /* 모바일도 살짝 아래(원하면 0px로 바꿔도 됨) */
   }
 
   #dialogue-text {
