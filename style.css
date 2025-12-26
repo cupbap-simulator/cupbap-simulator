@@ -14,18 +14,21 @@ body {
   align-items: center;
 }
 
-/* ✅ 기본(PC/노트북): 살짝 더 작게 + 아래로 */
+/* =========================
+   게임 박스 (PC 기준)
+========================= */
 .game-container {
-  width: min(390px, 88vw);      /* ⭐ 조금 줄임 */
+  width: min(390px, 88vw);   /* PC 최대 390px / 모바일은 vw */
   background: #ffffffcc;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  padding: 20px;
+  padding: 16px;
 
-  margin-left: 700px;           /* PC에서 오른쪽 */
-  transform: translateY(20px);  /* ⭐ 아래로 살짝 */
+  margin-left: 700px;        /* PC에서 오른쪽 */
+  transform: translateY(20px); /* 살짝 아래 */
 }
 
+/* 캐릭터 영역 */
 .character-area {
   text-align: center;
   margin-bottom: 10px;
@@ -40,18 +43,20 @@ body {
   font-size: 32px;
 }
 
+/* 대사 박스 */
 .dialogue-box {
   background: #fff;
   border-radius: 16px;
-  padding: 15px;
+  padding: 14px;
   border: 2px solid #ffc6e6;
 }
 
 #dialogue-text {
   margin-bottom: 12px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
+/* 선택지 */
 .choice-area {
   display: flex;
   flex-direction: column;
@@ -65,15 +70,14 @@ body {
   cursor: pointer;
   background: #ffe4f2;
   text-align: left;
-  transition: 0.1s;
   font-size: 14px;
 }
 
 .choice-btn:hover {
-  transform: translateY(-1px);
   background: #ffd1ec;
 }
 
+/* 다음 버튼 */
 .next-btn {
   margin-top: 10px;
   width: 100%;
@@ -86,7 +90,9 @@ body {
   font-size: 14px;
 }
 
-/* 결과창 */
+/* =========================
+   결과 화면
+========================= */
 .result-section {
   position: absolute;
   top: 50%;
@@ -111,19 +117,20 @@ body {
   cursor: pointer;
 }
 
-/* ✅ 📱 모바일에서는 크게 + 가운데 (오른쪽 밀기 해제) */
+/* =========================
+   📱 모바일 전용 조정
+========================= */
 @media (max-width: 768px) {
   .game-container {
-    width: 80vw;
-    max-width: 360px;
-    margin-left: 0;            /* ⭐ 모바일에서 오른쪽 밀기 해제 */
-    padding: 24px;
-    transform: translateY(20px); /* 모바일도 살짝 아래(원하면 0px로 바꿔도 됨) */
+    width: 80vw;        /* ⭐ 모바일 크기 조절은 여기 */
+    max-width: 340px;
+    margin-left: 0;     /* 오른쪽 밀기 해제 */
+    transform: translateY(20px);
+    padding: 16px;
   }
 
   #dialogue-text {
     font-size: 16px;
-    line-height: 1.6;
   }
 
   .choice-btn {
@@ -136,4 +143,3 @@ body {
     padding: 12px 0;
   }
 }
-
