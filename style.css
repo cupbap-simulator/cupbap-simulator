@@ -2,23 +2,25 @@ body {
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-image: url("background.png"); /* 이미지 파일 이름 */
-  background-size: cover; /* 화면에 꽉 차게 */
-  background-position: center; /* 중앙 기준 */
-  background-repeat: no-repeat; /* 반복 없음 */
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* ✅ 기본(PC/노트북) */
 .game-container {
-  width: 420px;
+  width: min(420px, 90vw);
   background: #ffffffcc;
   border-radius: 20px;
   padding: 20px;
 
-  margin-left: 700px; /* ⭐ 이 줄 추가 */
+  margin-left: 700px; /* PC에서는 오른쪽으로 */
 }
 
 .character-area {
@@ -81,11 +83,37 @@ body {
 
 .result-section {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background: #ffffffee;
   padding: 24px;
   border-radius: 20px;
   width: 320px;
   text-align: center;
+}
+
+/* ✅ 📱 모바일(폰)에서는 크게 + 가운데 정렬 + 글씨/버튼 키우기 */
+@media (max-width: 768px) {
+  .game-container {
+    width: 92vw;
+    max-width: 520px;
+    margin-left: 0;         /* ⭐ 오른쪽 밀기 해제 */
+    padding: 24px;
+  }
+
+  #dialogue-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .choice-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .next-btn {
+    font-size: 15px;
+    padding: 12px 0;
+  }
 }
