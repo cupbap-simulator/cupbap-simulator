@@ -55,7 +55,7 @@ const scenes = [
   },
   {
     id: 3,
-    bg: "bg6.jpg",
+    bg: "bg3.jpg",
     text: "오늘 하루… 어떤 느낌이야?",
     choices: [
       { label: "스트레스 쌓임🔥", add: { buldak: 1, spam: 1 }, next: 4 }, // ✅ 7 → 4
@@ -64,7 +64,7 @@ const scenes = [
   },
   {
     id: 4,
-    bg: "bg7.jpg",
+    bg: "bg4.jpg",
     text: "마요네즈 소스, 좋아해?",
     choices: [
       { label: "완전 좋아🍯", add: { tuna: 1, spam: 1 }, next: 5 },      // ✅ 8 → 5
@@ -73,7 +73,7 @@ const scenes = [
   },
   {
     id: 5,
-    bg: "bg9.jpg",
+    bg: "bg5.jpg",
     text: "마지막! 지금 딱 끌리는 느낌은?",
     choices: [
       { label: "상큼·깔끔🍋", add: { kimchi: 1, tuna: 1 }, next: "END" },
@@ -173,5 +173,6 @@ function showResult() {
 
   resultSection.style.display = "block";
 }
+
 
 renderScene(0);
