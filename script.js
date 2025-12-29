@@ -76,7 +76,7 @@ const scenes = [
     bg: "bg5.jpg",
     text: "마지막! 지금 딱 끌리는 느낌은?",
     choices: [
-      { label: "상큼·깔끔🍋", add: { kimchi: 1, tuna: 1 }, next: "END" },
+      { label: "상큼·에겐🍋", add: { kimchi: 1, tuna: 1 }, next: "END" },
       { label: "든든·묵직🍱", add: { buldak: 1, spam: 1 }, next: "END" }
     ]
   }
@@ -176,3 +176,4 @@ function showResult() {
 
 
 renderScene(0);
+
